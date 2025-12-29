@@ -1,0 +1,6 @@
+SELECT s.specobjid, s.plate, s.mjd, s.fiberid,
+       sp.teffadop, sp.loggadop, sp.fehadop,
+  s.class, s.subClass, s.elodieSpType into mydb.MyTable3 from specobjall s
+JOIN sppParams sp ON s.specobjid = sp.specobjid
+WHERE s.programname LIKE 'SEGUE%'
+AND s.class = 'STAR'
